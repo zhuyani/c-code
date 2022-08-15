@@ -566,6 +566,203 @@ int main()
 
 	return 0;
 }
+#include<stdio.h>
+void swap(int x,int y) 
+{
+	int i;
+	printf("%d,%d", x, y);
+	printf("\n");
+	i = x;
+	x = y;
+	y = i;
+	printf("%d,%d\n", x, y);
+
+}
+int main()
+{
+	int a = 3, b = 4;
+	printf("%d,%d\n", a, b);
+	swap(a, b);
+	printf("%d,%d\n", a, b);
+	return 0;
+}
+float add(float x, float y)
+{
+	float z;
+	return z = x + y;
+}
+main()
+{
+	float z, c;
+	int x = 5, y = 8;
+	c=add (x, y);
+	printf("%lf", c);
+	return 0;
+}
+int jiecheng(int y)
+{
+	int i,ret=1;
+	for (i = y; i > 0; i--)
+	{
+		ret=i*ret;
+	}
+	return ret;
+}
+int pingfang(int x)
+{
+	return x*x;
+}
+int main()
+{
+	int a = 2, b = 3, f1, f2, s,f3,f4;
+	f1 = pingfang(a);
+	f2 = jiecheng(f1);
+	f3 = pingfang(b);
+	f4 = jiecheng(f3);
+	s = f2+f4;
+	printf("%d", s);
+	return 0;
+}
+long f1(int p);
+main()
+{
+	int i;
+	long s = 0;
+	for (i = 2; i <= 3; i++)
+	{
+		s = s + f1(i);
+	}
+	printf("%d", s);
+}
+long f1(int p)
+{
+	int k;
+	long r;
+	k = p*p;
+	r = f2(k);
+	return r;
+}
+long f2(int q)
+{
+	long c = 1;
+	int i ;
+	for (i = 1; i <= q; i++)
+	{
+		c = c*i;
+	}
+	return c;
+}
+age(int n)
+{
+	int c;
+	if (n == 1)
+		c = 10;
+	else
+		c = age(n - 1) + 2;
+	return(c);
+}
+main()
+{
+	printf("%d\n", age(5));
+}
+void output(int x)
+{
+	if (x >= 0 && x <= 9)
+		printf("%d", x);
+	else
+	{
+		printf("%d", x % 10);
+		output(x / 10);
+	}
+}
+main()
+{
+	int a = 123,c;
+	 output(a);
+	return 0;
+
+}
+int large(int x, int y)
+{
+	int flag;
+	if (x > y)
+		flag = 1;
+	else if (x < y)
+		flag = -1;
+	else flag = 0;
+	return(flag);
+}
+main()
+{
+	int a[10], b[10], i, n = 0, m = 0, k = 0;
+	printf("Enter array a:\n");
+	for (i = 0; i < 10; i++)
+		scanf_s("%d", &a[i]);
+	printf("Enter array a:\n");
+	for (i = 0; i < 10; i++)
+		scanf_s("%d", &b[i]);
+	for (i = 0; i < 10; i++)
+	{
+		if (large(a[i], b[i]) == 1)
+			n = n + 1;
+		else if (large(a[i], b[i]) == 0)
+			m = m + 1;
+		else k = k + 1;
+	}
+	printf("m=%d,n=%d,k=%d", m, n, k);
+	return 0;
+}
+void sort(int array[], int n)
+{
+	int i, j=0, k, t;
+	for (i = 0; i < n - 1; i++)
+	{
+		k = i;
+		for (j = j + 1; j < n;j++)
+		if (array[j] < array[k])
+			k = j;
+		if (k != i)
+		{
+			t = array[i];
+			array[i] = array[k];
+			array[k] = t;
+		}
+	}
+}
+main()
+{
+	int a[10], i;
+	for (i = 0; i < 10; i++)
+		scanf_s("%d", &a[i]);
+	sort(a, 10);
+	for (i = 0; i < 10; i++)
+		printf("%d", a[i]);
+	printf("\n");
+}
+main()
+{
+	int i;
+	void f1();
+	void f2();
+	for (i = 1; i <= 5; i++)
+	{
+		f1();
+		f2();
+	}
+	return 0;
+}
+void f1()
+{
+	static int j = 0;
+	++j;
+	printf("j=%d\n", j);
+}
+void f2()
+{
+	int k = 0;
+	++k;
+	printf("k=%d\n", k);
+}
 
 
 
